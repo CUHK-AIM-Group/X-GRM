@@ -1,1 +1,10 @@
-# X-GRM
+# X-GRM: Large Gaussian Reconstruction Model for Sparse-view X-rays to Computed Tomography
+
+### [Project Page]() | [arXiv Paper]()
+
+
+![introduction](assets/introduction.png)
+
+![framework](assets/framework.png)
+
+Codes will be available soon.
