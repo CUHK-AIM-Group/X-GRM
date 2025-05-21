@@ -11,10 +11,4 @@
 </div> <br>
 
 
-![introduction](assets/comparison1.png)
-
-
-![introduction](assets/comparison2.png)
-
-
 Codes will be available soon.
