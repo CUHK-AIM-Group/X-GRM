@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <meta name="description"
+        content="X-GRM: Large Gaussian Reconstruction Model for Sparse-view X-rays to CT.">
+
+  <meta name="keywords" content="X-GRM, 3DGS, CT Reconstruction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>X-GRM: Large Gaussian Reconstruction Model for Sparse-view X-rays to Computed Tomography</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/logo.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title"> <span style="color: #036bfc;">X</span><span style="color: #3503fc;">-G</span><span style="color: #a200ff;">R</span><span style="color: #e250ff;">M</span>: Large Gaussian Reconstruction Model for Sparse-view X-rays to CT </h1>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block">
+              <a href="https://yifliu3.github.io/">Yifan Liu</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://wymancv.github.io/wuyang.github.io/">Wuyang Li</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com.hk/citations?user=fCzlLE4AAAAJ&hl=zh-CN">Weihao Yu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://chenxinli001.github.io/">Chenxin Li</a><sup>1</sup>,
+            </span>
+            <a href="https://scholar.google.com/citations?user=UIhXQ64AAAAJ&hl=en"><span class="author-block">
+              Alexandre Alahi</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.ca/citations?user=DxDCU7AAAAAJ&hl=en">Max Meng</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.ee.cuhk.edu.hk/~yxyuan/">Yixuan Yuan</a><sup>1,‡</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>CUHK,</span>
+            <span class="author-block"><sup>2</sup>EPFL,</span>
+            <span class="author-block"><sup>3</sup>SUSTech,</span>
+          </div>
+          <div class="is-size-6 publication-authors">
+          ‡ denotes corresponding author
+        </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- ArXiv Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/CUHK-AIM-Group/X-GRM"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+ <!-- Paper video. -->
+<!-- <section class="hero teaser">
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <div class="row">
+      <div class="gallery">
+        <video  width="100%" loop autoplay muted>
+          <source src="./static/videos/res1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="gallery">
+        <video  width="100%" loop autoplay muted>
+          <source src="./static/videos/add12.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="gallery">
+        <video  width="100%" loop autoplay muted>
+          <source src="./static/videos/res3.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="gallery">
+        <video  width="100%" loop autoplay muted>
+          <source src="./static/videos/res4.mp4" type="video/mp4">
+        </video>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="gallery">
+        <video  width="100%" loop autoplay muted>
+          <source src="./static/videos/res5.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="gallery">
+        <video  width="100%" loop autoplay muted>
+          <source src="./static/videos/res6.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="gallery">
+        <video  width="100%" loop autoplay muted>
+          <source src="./static/videos/res7.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="gallery">
+        <video  width="100%" loop autoplay muted>
+          <source src="./static/videos/add8.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+</section> -->
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body" style="text-align: center;">
+      <div style="display: flex; justify-content: center;">
+        <!-- 保持原始比例 -->
+<img src="./static/images/framework.png" style="width: 85%; height: auto;" />
+
+      </div>
+      <h2 class="title is-6 publication-title">
+        <br>
+        <span class="dnerf">X-GRM</span> predicts voxel-based 3D Gaussians from sparse-view X-ray images within 1 second.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<!-- Abstract. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+
+          <p>
+            Computed Tomography serves as an indispensable tool in clinical workflows, providing non-invasive visualization of internal anatomical structures. Existing CT reconstruction works are limited to small-capacity model architecture, inflexible volume representation, and small-scale training data. In this paper, we present X-GRM (X-ray Gaussian Reconstruction Model), a large feedforward model for reconstructing 3D CT from sparse-view 2D X-ray projections. X-GRM employs a scalable transformer-based architecture to encode an arbitrary number of sparse X-ray inputs, where tokens from different views are integrated efficiently. Then, tokens are decoded into a new volume representation, named Voxel-based Gaussian Splatting (VoxGS), which enables efficient CT volume extraction and differentiable X-ray rendering. To support the training of X-GRM, we collect ReconX-15K, a large-scale CT reconstruction dataset containing around 15,000 CT/X-ray pairs across diverse organs, including the chest, abdomen, pelvis, and tooth etc. This combination of a high-capacity model, flexible volume representation, and large-scale training data empowers our model to produce high-quality reconstructions from various testing inputs, including in-domain and out-domain X-ray projections.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Results. -->
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/add1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/add2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/add3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/add4.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/add15.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/add5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/add6.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/add7.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/add8.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Comparsion. -->
+     <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Comparsion with traditional and feedforward models</h2>
+
+        <img src="./static/images/comparison1.png" width="98%" align="center"/>
+
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Comparison with self-supervised models</h2>
+
+        <img src="./static/images/comparison2.png" width="98%" align="center"/>
+
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-full-width" style="text-align: center;">
+        <h2 class="title is-3">Novel view synthesis</h2>
+        <img src="./static/images/nvs.png" width="98%"/>
+      </div>
+    </div>
+    
+
+
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    If you find our work helpful, please consider citing:
+    <pre><code>
+
+    </code></pre>
+  </div>
+
+</section>
+
+
+
+<!-- Footer. -->
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p style="text-align: center">
+            Website template is borrowed from <a href="https://nerfies.github.io">Nerfies</a>.
+            Thanks for their effort.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
